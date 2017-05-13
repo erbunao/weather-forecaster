@@ -1,5 +1,7 @@
+require "open_weather"
+
 class OpenWeatherCityDetails
-  def process(opts)
+  def self.process(opts)
     new(opts).process
   end
 

@@ -1,0 +1,93 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?APPID=30ae933e41ab83436cadb4f392b2c8d7&q=,Manila&units=metrics
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - api.openweathermap.org
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - openresty
+      Date:
+      - Sat, 13 May 2017 17:57:33 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '456'
+      Connection:
+      - keep-alive
+      X-Cache-Key:
+      - "/data/2.5/weather?APPID=30ae933e41ab83436cadb4f392b2c8d7&q=%2cmanila&units=metrics"
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":120.98,"lat":14.6},"weather":[{"id":802,"main":"Clouds","description":"scattered
+        clouds","icon":"03n"}],"base":"stations","main":{"temp":302.15,"pressure":1010,"humidity":74,"temp_min":302.15,"temp_max":302.15},"visibility":10000,"wind":{"speed":2.6,"deg":120},"clouds":{"all":40},"dt":1494694800,"sys":{"type":1,"id":7706,"message":0.0059,"country":"PH","sunrise":1494624524,"sunset":1494670576},"id":1688216,"name":"Santa
+        Cruz","cod":200}'
+    http_version: 
+  recorded_at: Sat, 13 May 2017 17:57:33 GMT
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?APPID=30ae933e41ab83436cadb4f392b2c8d7&q=,San%20Francisco&units=metrics
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - api.openweathermap.org
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - openresty
+      Date:
+      - Sat, 13 May 2017 17:57:34 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '455'
+      Connection:
+      - keep-alive
+      X-Cache-Key:
+      - "/data/2.5/weather?APPID=30ae933e41ab83436cadb4f392b2c8d7&q=%2csan+francisco&units=metrics"
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":-122.42,"lat":37.77},"weather":[{"id":803,"main":"Clouds","description":"broken
+        clouds","icon":"04d"}],"base":"stations","main":{"temp":288.6,"pressure":1012,"humidity":60,"temp_min":286.15,"temp_max":293.15},"visibility":16093,"wind":{"speed":5.1,"deg":30},"clouds":{"all":75},"dt":1494696900,"sys":{"type":1,"id":226,"message":0.0165,"country":"US","sunrise":1494680437,"sunset":1494731517},"id":5391959,"name":"San
+        Francisco","cod":200}'
+    http_version: 
+  recorded_at: Sat, 13 May 2017 17:57:34 GMT
+recorded_with: VCR 3.0.3

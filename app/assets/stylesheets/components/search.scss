@@ -1,0 +1,11 @@
+.search {
+  width: 720px;
+  opacity: 0.2;
+  padding: 4px;
+  background-color: $white;
+  border-radius: 2px 2px 0 0;
+
+  &__item {
+    border-radius: 2px;
+  }
+}

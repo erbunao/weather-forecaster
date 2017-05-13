@@ -1,10 +1,9 @@
-$grid-width: 1020;
+$grid-width: 1440;
 $grid-column-padding: 35;
 $grid-column-width: ($grid-width / 12) - $grid-column-padding;
 $padding-percentage: ($grid-column-padding / $grid-width) * 100%;
 
 .columns {
-  @extend .clearfix;
   width: 100%;
   margin-left: auto;
   margin-right: auto;

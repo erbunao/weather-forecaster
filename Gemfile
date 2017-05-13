@@ -18,6 +18,9 @@ gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 
+gem 'dotenv-rails'
+gem 'open-weather'
+
 group :development, :test do
   gem 'capybara', '~> 2.13.0'
   gem 'selenium-webdriver'

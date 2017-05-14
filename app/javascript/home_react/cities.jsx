@@ -1,11 +1,11 @@
 import React from 'react';
 import City from './city';
 
-function Cities({ cities }) {
+function Cities({ weather_details }) {
   return (
     <div className="columns">
-      {cities.map((city, i) => {
-        return <City key={i} city={city}/>;
+      {weather_details.map((weather_detail, i) => {
+        return <City key={i} weather_detail={weather_detail}/>;
       })}
     </div>
   );

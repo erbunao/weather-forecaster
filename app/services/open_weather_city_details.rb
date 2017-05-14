@@ -1,6 +1,8 @@
 require "open_weather"
 
 class OpenWeatherCityDetails
+  UNITS = "metric"
+
   def self.process(opts)
     new(opts).process
   end
@@ -18,7 +20,7 @@ class OpenWeatherCityDetails
   attr_reader :cities
 
   def options
-    { units: "metrics" }.merge(api_key)
+    { units: UNITS }.merge(api_key)
   end
 
   def api_key

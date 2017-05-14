@@ -6,7 +6,10 @@ class Home extends Component {
   constructor(props) {
     super(props);
 
-    this.state = { cities: [] };
+    this.state = {
+      cities: [],
+      weather_details: [],
+    };
 
     this.onCreate = this.onCreate.bind(this);
     this.onRemove = this.onRemove.bind(this);
@@ -27,7 +30,10 @@ class Home extends Component {
     $.ajax({
       url: '/weather_inquiry',
       type: 'GET',
-      data: { cities: this.state.cities }
+      data: { cities: this.state.cities },
+      success: (weather_details) => {
+        this.setState({ weather_details });
+      }
     });
   }
 
@@ -41,7 +47,7 @@ class Home extends Component {
           />
         </div>
         <div className="section">
-          <Cities cities={this.state.cities} />
+          <Cities weather_details={this.state.weather_details} />
         </div>
       </div>
     );

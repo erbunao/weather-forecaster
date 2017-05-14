@@ -40,16 +40,17 @@ class Home extends Component {
       url: '/weather_inquiry',
       type: 'GET',
       data: { city },
-      success: (details) => {
-        if (details.cod == "404") {
-          this.setState({ error: { city: [city] } });
-          console.log('imhere');
-          Alert(`${city} can't be recognized.`);
-        } else {
-          const cities = Object.assign(this.state.cities, { [city]: details });
-          this.setState({ cities });
-        }
-      }
+      success: (response) => {
+        const cities = Object.assign(this.state.cities, {
+          [city]: response.details
+        });
+        this.setState({ cities });
+      },
+      error: (response) => {
+        const resp = JSON.parse(response.responseText);
+        this.setState({ error: { city: [city] } });
+        Alert(`${city} ${resp.error.message}`, 'error');
+      },
     });
   }
 

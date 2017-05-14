@@ -19,7 +19,7 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 
 gem 'dotenv-rails'
-gem 'open-weather'
+gem 'open-weather', github: 'erbunao/ruby_open_weather_map'
 
 group :development, :test do
   gem 'capybara', '~> 2.13.0'

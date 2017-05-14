@@ -1,3 +1,10 @@
+GIT
+  remote: https://github.com/erbunao/ruby_open_weather_map.git
+  revision: 0d84c3011504f0feffa2e717d671ca9bb98a9abc
+  specs:
+    open-weather (0.12.0)
+      json (~> 1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -97,8 +104,6 @@ GEM
     nio4r (2.0.0)
     nokogiri (1.7.2)
       mini_portile2 (~> 2.1.0)
-    open-weather (0.12.0)
-      json (~> 1)
     pry (0.10.4)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
@@ -223,7 +228,7 @@ DEPENDENCIES
   dotenv-rails
   jbuilder (~> 2.5)
   listen (>= 3.0.5, < 3.2)
-  open-weather
+  open-weather!
   pry-nav
   puma (~> 3.7)
   rails (~> 5.1.0)

@@ -15,16 +15,21 @@ class Search extends Component {
       plugins: ['remove_button'],
       delimiter: ',',
       create: (value) => {
-        this.props.onCreate(value);
         return { value, text: value };
+      },
+      onItemAdd: (value, _) => {
+        this.props.onCreate(value);
       },
       onItemRemove: (value) => {
         this.props.onRemove(value);
       },
-      onItemAdd: (value, _) => {
-        this.props.onCreate(value);
-      }
     });
+  }
+
+  componentDidUpdate(previousProps, previousState) {
+    if (this.props.error.city) {
+      this.selectize_field.removeOption(this.props.error.city);
+    }
   }
 
   render() {

@@ -1,0 +1,51 @@
+@mixin mobile {
+  @media #{map-get($breakpoints, "mobile")} {
+    @content
+  }
+}
+
+.alert {
+  max-width: 260px;
+  top: 20px;
+  right: 20px;
+  z-index: 5;
+  color: white;
+  position: fixed;
+  border-radius: 4px;
+  line-height: 26px;
+  transition: all 0.4s ease-out;
+  padding: 20px;
+  font-size: 16px;
+  background-color: #1A8CFF;
+  box-shadow: 0 2px 20px rgba(#273343, 0.1);
+
+  // default state
+  opacity: 0;
+  transform: translate(100px, 0);
+
+  @include mobile {
+    top: auto;
+    right: 5%;
+    width: 90%;
+    bottom: 20px;
+    max-width: none;
+    text-align: center;
+    transform: translate(0, 100px);
+    background-color: #273343;
+  }
+}
+
+.alert-error {
+  background-color: #FA5562;
+}
+
+.alert--show {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+.alert--show.alert--dismiss {
+  opacity: 0;
+  z-index: -1;
+  transform: translate(0, 100px);
+}

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Search from './search';
 import Cities from './cities';
+import Alert from './alert';
 
 class Home extends Component {
   constructor(props) {
@@ -8,11 +9,16 @@ class Home extends Component {
 
     this.state = {
       cities: {},
+      error: '',
     };
 
     this.onCreate = this.onCreate.bind(this);
     this.onRemove = this.onRemove.bind(this);
     this.fetchData = this.fetchData.bind(this);
+  }
+
+  get cities() {
+    return Object.keys(this.state.cities);
   }
 
   get weather_details() {
@@ -35,8 +41,14 @@ class Home extends Component {
       type: 'GET',
       data: { city },
       success: (details) => {
-        const cities = Object.assign(this.state.cities, { [city]: details });
-        this.setState({ cities });
+        if (details.cod == "404") {
+          this.setState({ error: { city: [city] } });
+          console.log('imhere');
+          Alert(`${city} can't be recognized.`);
+        } else {
+          const cities = Object.assign(this.state.cities, { [city]: details });
+          this.setState({ cities });
+        }
       }
     });
   }
@@ -46,6 +58,8 @@ class Home extends Component {
       <div>
         <div className="navbar">
           <Search
+            cities={this.cities}
+            error={this.state.error}
             onCreate={this.onCreate}
             onRemove={this.onRemove}
           />

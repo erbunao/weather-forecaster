@@ -1,11 +1,24 @@
-.card {
+.card-grid {
+  width: 100%;
   display: flex;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 340px;
+  display: flex;
+  margin-left: 10px;
+  margin-right: 10px;
   border-radius: 2px;
   margin-bottom: 30px;
+  box-sizing: border-box;
   background-color: $white;
   padding: 12px 17px 14px 17px;
   justify-content: space-between;
   box-shadow: 0 1px 2px 0 #E0E5E8;
+
+  &:nth-child(3n+1) { margin-left: 0; }
+  &:nth-child(3n) { margin-right: 0; }
 
   &__header {
     font-size: 32px;
@@ -39,7 +52,7 @@
   }
 
   &__main {
-    padding-left: 30px;
+    flex: 1;
     text-align: center;
 
     .card__content {
@@ -48,6 +61,11 @@
   }
 
   &__details {
+    flex: 1.5;
+  }
+
+  &__subdetails {
+    flex: 1.25;
     padding-top: 12px;
     text-align: right;
 

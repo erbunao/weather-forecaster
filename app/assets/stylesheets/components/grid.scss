@@ -1,5 +1,5 @@
 $grid-width: 1440;
-$grid-column-padding: 35;
+$grid-column-padding: 28;
 $grid-column-width: ($grid-width / 12) - $grid-column-padding;
 $padding-percentage: ($grid-column-padding / $grid-width) * 100%;
 
@@ -40,9 +40,6 @@ $padding-percentage: ($grid-column-padding / $grid-width) * 100%;
   }
 
   &.columns-endless {
-    .column:first-child { margin-left: $padding-percentage / 2 }
-    .column:last-child { margin-right: $padding-percentage / 2 }
-
     @for $i from 1 to 13 {
       $column-width: (($grid-column-width * $i) + ($grid-column-padding * ($i - 1))) / $grid-width;
       .column-#{$i} {

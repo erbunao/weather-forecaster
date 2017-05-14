@@ -4,12 +4,10 @@ import 'selectize';
 class Search extends Component {
   constructor(props) {
     super(props);
+  }
 
-    this.state = { cities: [] };
-
-    this.onCreate = this.onCreate.bind(this);
-    this.onRemove = this.onRemove.bind(this);
-    this.fetchData = this.fetchData.bind(this);
+  get search_field_items() {
+    return this.refs.search.selectize.items;
   }
 
   componentDidMount() {
@@ -17,32 +15,12 @@ class Search extends Component {
       plugins: ['remove_button'],
       delimiter: ',',
       create: (value) => {
-        this.onCreate(value);
+        this.props.onCreate(value);
         return { value, text: value };
       },
-      onItemRemove: (value) => {
-        this.onRemove();
+      onItemRemove: (_) => {
+        this.props.onRemove(this.search_field_items);
       }
-    });
-  }
-
-  onCreate(value) {
-    this.setState({
-      cities: this.state.cities.concat([value]),
-    }, this.fetchData);
-  }
-
-  onRemove() {
-    this.setState({
-      cities: this.refs.search.selectize.items,
-    }, this.fetchData);
-  }
-
-  fetchData() {
-    $.ajax({
-      url: '/weather_inquiry',
-      type: 'GET',
-      data: { cities: this.state.cities }
     });
   }
 

@@ -363,7 +363,7 @@
 
 .selectize-control.multi .selectize-input.has-items {
   padding: 4px 4px 0;
-  height: 45px;
+  min-height: 45px;
 }
 
 .selectize-input input { height: auto }

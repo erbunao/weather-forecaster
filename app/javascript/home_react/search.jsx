@@ -6,8 +6,8 @@ class Search extends Component {
     super(props);
   }
 
-  get search_field_items() {
-    return this.refs.search.selectize.items;
+  get selectize_field() {
+    return this.refs.search.selectize;
   }
 
   componentDidMount() {
@@ -18,8 +18,11 @@ class Search extends Component {
         this.props.onCreate(value);
         return { value, text: value };
       },
-      onItemRemove: (_) => {
-        this.props.onRemove(this.search_field_items);
+      onItemRemove: (value) => {
+        this.props.onRemove(value);
+      },
+      onItemAdd: (value, _) => {
+        this.props.onCreate(value);
       }
     });
   }

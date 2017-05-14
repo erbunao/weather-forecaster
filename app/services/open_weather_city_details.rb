@@ -8,16 +8,16 @@ class OpenWeatherCityDetails
   end
 
   def initialize(opts)
-    @cities = opts[:cities] || []
+    @city = opts[:city] || ''
   end
 
   def process
-    cities.map { |city| OpenWeather::Current.city(city, options) }
+    OpenWeather::Current.city(city, options)
   end
 
   private
 
-  attr_reader :cities
+  attr_reader :city
 
   def options
     { units: UNITS }.merge(api_key)

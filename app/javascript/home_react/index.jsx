@@ -7,8 +7,7 @@ class Home extends Component {
     super(props);
 
     this.state = {
-      cities: [],
-      weather_details: [],
+      cities: {},
     };
 
     this.onCreate = this.onCreate.bind(this);
@@ -16,23 +15,28 @@ class Home extends Component {
     this.fetchData = this.fetchData.bind(this);
   }
 
+  get weather_details() {
+    return Object.values(this.state.cities);
+  }
+
   onCreate(value) {
-    this.setState({
-      cities: this.state.cities.concat([value]),
-    }, this.fetchData);
+    this.fetchData(value);
   }
 
-  onRemove(cities) {
-    this.setState({ cities }, this.fetchData);
+  onRemove(city) {
+    let cities = Object.assign({}, this.state.cities);
+    delete cities[city];
+    this.setState({ cities });
   }
 
-  fetchData() {
+  fetchData(city) {
     $.ajax({
       url: '/weather_inquiry',
       type: 'GET',
-      data: { cities: this.state.cities },
-      success: (weather_details) => {
-        this.setState({ weather_details });
+      data: { city },
+      success: (details) => {
+        const cities = Object.assign(this.state.cities, { [city]: details });
+        this.setState({ cities });
       }
     });
   }
@@ -47,7 +51,7 @@ class Home extends Component {
           />
         </div>
         <div className="section">
-          <Cities weather_details={this.state.weather_details} />
+          <Cities weather_details={this.weather_details} />
         </div>
       </div>
     );

@@ -1,0 +1,47 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?APPID=30ae933e41ab83436cadb4f392b2c8d7&q=San%20Francisco&units=metric
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - api.openweathermap.org
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - openresty
+      Date:
+      - Sun, 14 May 2017 16:15:26 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '441'
+      Connection:
+      - keep-alive
+      X-Cache-Key:
+      - "/data/2.5/weather?APPID=30ae933e41ab83436cadb4f392b2c8d7&q=san+francisco&units=metric"
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":-122.42,"lat":37.77},"weather":[{"id":721,"main":"Haze","description":"haze","icon":"50d"}],"base":"stations","main":{"temp":12.81,"pressure":1017,"humidity":43,"temp_min":11,"temp_max":23},"visibility":16093,"wind":{"speed":4.22,"deg":295.001},"clouds":{"all":1},"dt":1494777300,"sys":{"type":1,"id":226,"message":0.0139,"country":"US","sunrise":1494766789,"sunset":1494817965},"id":5391959,"name":"San
+        Francisco","cod":200}'
+    http_version: 
+  recorded_at: Sun, 14 May 2017 16:15:26 GMT
+recorded_with: VCR 3.0.3

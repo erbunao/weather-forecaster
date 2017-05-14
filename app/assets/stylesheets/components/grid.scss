@@ -9,6 +9,12 @@ $padding-percentage: ($grid-column-padding / $grid-width) * 100%;
   margin-right: auto;
   max-width: #{$grid-width}px;
 
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
   &.columns-full-width { max-width: none }
 
   .column {

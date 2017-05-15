@@ -1,0 +1,47 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?APPID=30ae933e41ab83436cadb4f392b2c8d7&q=Lisbon&units=metric
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - api.openweathermap.org
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - openresty
+      Date:
+      - Mon, 15 May 2017 15:28:21 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '437'
+      Connection:
+      - keep-alive
+      X-Cache-Key:
+      - "/data/2.5/weather?APPID=30ae933e41ab83436cadb4f392b2c8d7&q=lisbon&units=metric"
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":-9.13,"lat":38.72},"weather":[{"id":801,"main":"Clouds","description":"few
+        clouds","icon":"02d"}],"base":"stations","main":{"temp":25.25,"pressure":1024,"humidity":39,"temp_min":21,"temp_max":28},"visibility":10000,"wind":{"speed":2.1,"deg":340},"clouds":{"all":20},"dt":1494860400,"sys":{"type":1,"id":5961,"message":0.0068,"country":"PT","sunrise":1494825830,"sunset":1494877348},"id":2267057,"name":"Lisbon","cod":200}'
+    http_version: 
+  recorded_at: Mon, 15 May 2017 15:28:21 GMT
+recorded_with: VCR 3.0.3

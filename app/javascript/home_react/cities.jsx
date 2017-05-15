@@ -3,7 +3,7 @@ import City from './city';
 
 function Cities({ weather_details }) {
   return (
-    <div className="card-grid">
+    <div className="columns columns-endless">
       {weather_details.map((weather_detail, i) => {
         return <City key={i} weather_detail={weather_detail}/>;
       })}

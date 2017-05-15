@@ -1,14 +1,5 @@
-.card-grid {
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-}
-
 .card {
-  width: 340px;
   display: flex;
-  margin-left: 10px;
-  margin-right: 10px;
   border-radius: 2px;
   margin-bottom: 30px;
   box-sizing: border-box;
@@ -16,9 +7,6 @@
   padding: 12px 17px 14px 17px;
   justify-content: space-between;
   box-shadow: 0 1px 2px 0 #E0E5E8;
-
-  &:nth-child(3n+1) { margin-left: 0; }
-  &:nth-child(3n) { margin-right: 0; }
 
   &__header {
     font-size: 32px;
@@ -72,5 +60,10 @@
     .card__content:not(:last-child) {
       padding-bottom: 3px;
     }
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .card {
   }
 }

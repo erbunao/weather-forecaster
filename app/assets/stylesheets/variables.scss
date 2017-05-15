@@ -14,9 +14,7 @@ $gray: #A1A8AF;
 $light-gray: #ECECEC;
 
 $breakpoints: (
-  small: 0px,
-  medium: 768px,
-  large: 1024px,
-  xlarge: 1200px,
-  xxlarge: 1440px,
+  "mobile": "only screen and (max-width: 639px)",
+  "tablet": "only screen and (min-width: 640px) and (max-width: 1023px)",
+  "desktop": "only screen and (min-width: 1024px)"
 );

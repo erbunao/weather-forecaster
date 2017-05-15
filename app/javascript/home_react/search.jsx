@@ -39,7 +39,7 @@ class Search extends Component {
           type="text"
           ref="search"
           className="js-selectize"
-          placeholder="+ Add a city"
+          placeholder="Add a city"
         />
       </div>
     );

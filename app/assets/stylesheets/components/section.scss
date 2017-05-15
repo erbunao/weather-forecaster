@@ -2,6 +2,12 @@
   height: 100vh;
   padding: 70px 179px;
   background-color: $container-color;
+
+  &--empty {
+    color: $gray;
+    text-align: center;
+    font-family: $font-medium;
+  }
 }
 
 @media #{map-get($breakpoints, 'mobile')} {

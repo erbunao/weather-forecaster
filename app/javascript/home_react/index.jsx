@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
+import Alert from './alert';
 import Search from './search';
 import Cities from './cities';
-import Alert from './alert';
+import EmptySection from './empty_section';
 
 class Home extends Component {
   constructor(props) {
@@ -23,6 +24,10 @@ class Home extends Component {
 
   get weather_details() {
     return Object.values(this.state.cities);
+  }
+
+  get hasCities() {
+    return this.cities.length > 0;
   }
 
   onCreate(value) {
@@ -66,7 +71,11 @@ class Home extends Component {
           />
         </div>
         <div className="section">
-          <Cities weather_details={this.weather_details} />
+          { this.hasCities ? (
+            <Cities weather_details={this.weather_details} />
+          ) : (
+            <EmptySection />
+          )}
         </div>
       </div>
     );
